@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        #calculator {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #chartContainer {
+            margin-top: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <h1>Investment Calculator</h1>
+        <label for="amount">Enter Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required><br><br>
+
+        <label for="time">Enter Time Span (in years):</label>
+        <input type="number" id="time" placeholder="Enter time span" required><br><br>
+
+        <button onclick="calculate()">Calculate</button>
+
+        <h2 id="result1">Your Return in fixed deposit:<br> Rs 0.00</h2>
+        <h2 id="result2">Your Return in sovereign gold bonds:<br> Rs 0.00</h2>
+        <h2 id="result3">Your Return in stock market:<br> Rs 0.00</h2>
+        <h2 id="result4">Your Return in real estate:<br> Rs 0.00</h2>
+    </div>
+
+    <!-- Create a canvas element for the chart -->
+    <div id="chartContainer">
+        <canvas id="investmentChart"></canvas>
+    </div>
+
+    <div id="chartContainer">
+        <canvas id="investmentChart1"></canvas>
+    </div>
+
+    <div id="chartContainer">
+        <canvas id="combinedChart"></canvas>
+    </div>
+
+    <p id="maxReturnInfo"></p>
+    <script>
+        
+        function calculate() {
+            var amount = parseFloat(document.getElementById('amount').value);
+            var time = parseFloat(document.getElementById('time').value);
+            //fd
+            var averageReturnRate1 ;
+            if(time>=1 && time<3)
+            {
+                averageReturnRate1=0.0660;
+            }
+            else if(time>=3 && time<5)
+            {
+                averageReturnRate1=0.07;
+            }
+            else if(time>=5)
+            {
+                averageReturnRate1=0.0720;
+            }
+            //sgb
+            var averageReturnRate2;
+            if(time>=1 && time<8)
+            {
+                averageReturnRate2=0.06;
+            }
+            else if(time>=8)
+            {
+                averageReturnRate2=0.1224;
+            }
+            //stock
+            var averageReturnRate3;
+            if(time>=1 && time<3)
+            {
+                averageReturnRate3=0.073;
+            }
+            else if(time>=3 && time <5)
+            {
+                averageReturnRate3=0.1867;
+            }
+            else if(time==5)
+            {
+                averageReturnRate3=0.1369;
+            }
+            else if(time>5)
+            {
+                averageReturnRate3=0.1145;
+            }
+
+            //real estate
+            var averageReturnRate4;
+            if(time>=1 && time<10)
+            {
+                averageReturnRate4=0.048;
+            }
+            else if(time>=10 && time <15)
+            {
+                averageReturnRate4=0.065;
+            }
+            else if(time>=15)
+            {
+                averageReturnRate4=0.09;
+            }
+
+            var returns1 = amount * Math.pow(1 + averageReturnRate1, time);
+            var returns2 = amount * Math.pow(1 + averageReturnRate2, time);
+            var returns3 = amount * Math.pow(1 + averageReturnRate3, time);
+            var returns4 = amount * Math.pow(1 + averageReturnRate4, time);
+
+            var maxReturn = Math.max(returns1, returns2, returns3, returns4);
+            var maxReturnLabel = '';
+
+            if (maxReturn === returns1) {
+                maxReturnLabel = 'Fixed Deposit';
+            } else if (maxReturn === returns2) {
+                maxReturnLabel = 'Gold';
+            } else if (maxReturn === returns3) {
+                maxReturnLabel = 'Stock Market';
+            } else {
+                maxReturnLabel = 'Real Estate';
+            }
+
+            document.getElementById('result1').innerHTML = 'Your Return in fixed deposit: ' + returns1.toFixed(2);
+            document.getElementById('result2').innerHTML = 'Your Return in  sovereign gold bond: ' + returns2.toFixed(2);
+            document.getElementById('result3').innerHTML = 'Your Return in stock market: ' + returns3.toFixed(2);
+            document.getElementById('result4').innerHTML = 'Your Return in real estate: ' + returns4.toFixed(2);
+
+            // Create a data array for the chart
+            var chartData = {
+                labels: ['Fixed Deposit', 'Gold', 'Stock Market', 'Real Estate'],
+                datasets: [{
+                    label: 'Investment Returns',
+                    backgroundColor: ['#3498db', '#2ecc71', '#e74c3c', '#f39c12'],
+                    data: [returns1, returns2, returns3, returns4],
+                }]
+            };
+
+            // Get the chart canvas
+            var ctx = document.getElementById('investmentChart').getContext('2d');
+            var ctx1 = document.getElementById('investmentChart1').getContext('2d');
+
+            // Create a bar chart
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+            });
+            
+
+            const calculateRisk=(initialInvestment, expectedReturn, volatility, investmentTime)=> {
+            // Your existing risk calculation logic remains unchanged
+                console.log(1);
+                const annualReturn = initialInvestment * expectedReturn;
+                const annualVolatility = initialInvestment * volatility;
+                const standardDeviation = annualVolatility * Math.sqrt(investmentTime);
+                const risk = (standardDeviation / initialInvestment) * 100;
+                return risk;
+            }
+            
+            let volatility1=0.05;
+            let volatility2=0.025;
+            let volatility3=0.03;
+            let volatility4=0.10;
+
+            let d1=calculateRisk(amount,returns1,volatility1,time);
+            let d2=calculateRisk(amount, returns2, volatility2, time);
+            let d3=calculateRisk(amount, returns3, volatility3, time);
+            let d4=calculateRisk(amount, returns4, volatility4, time);
+                    
+            
+            var riskData = {
+                labels: ['Fixed Deposit', 'Gold', 'Stock Market', 'Real Estate'],
+                datasets: [{
+                    label: 'Risk',
+                    backgroundColor: ['#3498db', '#2ecc71', '#e74c3c', '#f39c12'],
+                    data: [d1, d2, d3, d4],
+                }]
+            };
+
+
+            var myChart1 = new Chart(ctx1, {
+                type: 'bar',
+                data: riskData,
+            });
+            
+            document.getElementById('maxReturnInfo').innerHTML = 'The investment option with the highest return is: ' + maxReturnLabel;
+            let lacks=1000;
+            // Risk vs Return
+            var combinedChartData = {
+                labels: ['Fixed Deposit', 'Gold', 'Stock Market', 'Real Estate'],
+                datasets: [{
+                    type:'line',
+                    label: 'Risk Analysis',
+                    backgroundColor: '#e74c3c',
+                    data: [d1,d2,d3,d4],
+                },{
+                    type:'bar',
+                    label: 'Investment Returns(in thousands)',
+                    backgroundColor: '#3498db',
+                    data: [returns1/lacks, returns2/lacks, returns3/lacks, returns4/lacks],
+                }]
+            };
+            var combinedCtx = document.getElementById('combinedChart').getContext('2d');
+
+            // Create a scatter plot for risk analysis vs investment
+            var combinedChart = new Chart(combinedCtx, {
+                
+                data: combinedChartData,
+                // options: options
+                // {
+                //     scales: {
+                //         x: {
+                //             type: 'linear',
+                //             position: 'bottom',
+                //             scaleLabel: {
+                //                 display: true,
+                //                 labelString: 'Investment Returns'
+                //             }
+                //         },
+                //         y: {
+                //             type: 'linear',
+                //             position: 'left',
+                //             scaleLabel: {
+                //                 display: true,
+                //                 labelString: 'Risk Analysis'
+                //             }
+                //         }
+                //     }
+                // }
+            });            
+            
+        }
+
+
+    </script>
+</body>
+</html>

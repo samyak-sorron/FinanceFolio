@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="Animations/animate1.css">
+    <link rel="stylesheet" href="Animations/animate2.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+    <title>Finance Folio</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-floating navbar-expand-md navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">FinanceFolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" tabindex="-1" aria-disabled="true">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features" tabindex="-1" aria-disabled="true">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features" tabindex="-1" aria-disabled="true">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing-plan" tabindex="-1" aria-disabled="true">Investment Options</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us" tabindex="-1" aria-disabled="true">Contact Us</a>
+                    </li>
+                    
+                </ul>
+                <a href="./signin.html" class="btn btn-ghost" role="button" id="btn-nav"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person me-1" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                  </svg>Sign In</a>
+            </div>
+        </div>
+    </nav>
+    <section class="home vh-100" id="home">
+        <div class="container" id="container__home">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-3 mb-4" data-animate-in="up" id="header__home">Manage Your <br> Finance easier</h1>
+                    <p data-animate-in="left">Website has features to view and mange <br>your finances, such as investing in different areas.</p>
+                </div>
+                <div class="col text-center">
+                    <img class="img-fluid" src="Assets/types_of_investments.jpeg.jpg" alt="app-preview" id="img__home" data-animation="zoomIn">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="clients">
+        <div class="container">
+            <div class="row text-center pt-5">
+                <div class="col mb-5">
+                    <img src="Assets/clients/alter_sport.png" class="img-fluid" alt="sport-image"
+                        style="max-height: 100px; min-width: 100px;"  data-animation="zoomReverseIn" data-animation-delay="100ms">
+                </div>
+                <div class="col mb-5">
+                    <img src="Assets/clients/cleaning_service.png" class="img-fluid" alt="sport-image"
+                        style="max-height: 100px; min-width: 100px;" data-animation="zoomReverseIn" data-animation-delay="300ms">
+                </div>
+                <div class="col mb-5">
+                    <img src="Assets/clients/creative_photo.png" class="img-fluid" alt="sport-image"
+                        style="max-height: 100px; min-width: 100px;" data-animation="zoomReverseIn" data-animation-delay="600ms">
+                </div>
+                <div class="col mb-5">
+                    <img src="Assets/clients/spa_beauty.png" class="img-fluid" alt="sport-image"
+                        style="max-height: 100px; min-width: 100px;" data-animation="zoomReverseIn" data-animation-delay="900ms">
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="features1 mt-5" style="background-image: url(Assets/pattern_1.svg);" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2><b>Benefits of investments :</b></h2>
+                    <!-- <img class="img-fluid" src="Assets/app_preview_2.png" alt="app-preview" id="img__home" data-animation="flipInY" data-animation-delay="300ms"> -->
+                </div>
+                <div class="col text-start" data-animate-in="up">
+                    <span>
+                        <i class="fas fa-cubes" style="color: white;" id="fa1"></i>
+                        <h5><b>Wealth Growth:</b> One of the primary benefits of investing is the potential for your money to grow over time. By earning returns on your investments, you can accumulate more wealth than if you simply keep your money in a savings account.</h5>
+                    </span>
+                    <span>
+                        <i class="fas fa-shield-alt" style="color: white;" id="fa2"></i>
+                        <h5><b>Compound Interest:</b> Investing allows you to benefit from compound interest, which means you earn interest not only on your initial investment but also on the interest you've already earned. Over time, this can significantly boost your returns.</h5>
+                    </span>
+                    <span>
+                        <i class="fas fa-laptop" style="color: white;" id="fa3"></i>
+                        <h5><b>Tax Advantages:</b> Certain investment accounts, like retirement accounts or tax-efficient funds, offer tax advantages that can reduce your overall tax liability.</h5>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features2 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col" data-animate-in="left">
+                    <h1 class="display-4" id="headers__features__2"><b>Investment Calculator in different domains </b></h1>
+                    <h3><a href="investmentcal.html"><p>Investment Calculator</p></a></h3>
+                    <!-- <a href="#"><p>Stock Market Calculator</p></a>
+                    <a href="#"><p>3.Mutual Fund Calculator</p></a>
+                    <a href="#"><p>4.Fixed Deposit Calculator</p></a> -->
+                </div>
+                <div class="col text-center" data-animate-in="right">
+                    <!-- <img class="img-fluid mb-5" src="Assets/app_preview_3.png" alt="app-preview" id="img__home"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features3">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h1 class="display-5" style="color: white;" data-animate-in="bottom">Why Choose Us?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5" style="color: white;">
+            <div class="row">
+                <div class="col text-center" data-animation="zoomReverseIn" data-animation-delay="300ms">
+                    <i class="fas fa-rocket mb-3" style="color: blue; font-size: 60px;"></i>
+                    <h3 class="mb-3">Very Fast</h3>
+                    <p>Gives you results in real time.</p>
+                </div>
+                <div class="col text-center" data-animation="zoomReverseIn" data-animation-delay="400ms">
+                    <i class="fas fa-user-check mb-3" style="color: red; font-size: 60px;"></i>
+                    <h3 class="mb-3">Variety</h3>
+                    <p>We give range of investment options</p>
+                </div>
+                <div class="col text-center" data-animation="zoomReverseIn" data-animation-delay="500ms">
+                    <i class="fas fa-ad mb-3" style="color: skyblue; font-size: 60px;"></i>
+                    <h3 class="mb-3">Accurate</h3>
+                    <p>Our results are accurate according to industry experts</p>
+                </div>
+                <div class="col text-center" data-animation="zoomReverseIn" data-animation-delay="600ms">
+                    <i class="fas fa-money-bill-wave mb-3" style="color: orange; font-size: 60px;"></i>
+                    <h3 class="mb-3">Reliable</h3>
+                    <p>We give results based on dependable programs</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="container mt-5" style="color: white;">
+            <div class="row">
+                <div class="col text-center" data-animation="zoomReverseIn" data-animation-delay="700ms">
+                    <i class="fas fa-phone-alt mb-3" style="color: purple; font-size: 60px;"></i>
+                    <h3 class="mb-3">Very Fast</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea distinctio suscipit</p>
+                </div>
+                <div class="col text-center" data-animation="zoomReverseIn" data-animation-delay="800ms">
+                    <i class="fas fa-tty mb-3" style="color: rgb(100, 190, 100); font-size: 60px;"></i>
+                    <h3 class="mb-3">Very Fast</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea distinctio suscipit</p>
+                </div>
+            </div>
+        </div> -->
+    </section>
+    <section class="pricing pt-5" id="pricing-plan">
+        <div class="container">
+            <div class="row">
+                <div class="col mb-5 mb-lg-0" data-animate-in="left">
+                    <h1 class="display-4">Investment Options</h1>
+                </div>
+                <div class="col text-center mb-5" data-animate-in="up">
+                    <div class="pricing-table" id="pricing-table-1">
+                        <div class="pricing-item">
+                            <div class="pricing-head">
+                                <h5>Stock Market</h5>
+                                <h5 class="price">offers fixed interest rates :</h5>
+                                <br><br>
+                            </div>
+                            <div class="pricing-body">
+                               
+                                    Returns come from capital
+                                    appreciations.
+                                    The annual return for the stock market
+                                    has been around 7% to 9%.
+               <br><br> <br>
+                                
+                            </div>
+                            <a href="https://zerodha.com/" class="btn btn-outline-dark" role="button" style="border-radius: 15px;">Learn
+                                 more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-center mb-5" data-animate-in="up">
+                    <div class="pricing-table" id="pricing-table-2">
+                        <div class="pricing-item">
+                            <div class="pricing-head">
+                                <h5>Mutual Funds</h5>
+                                <br>
+                                <h5 class="price">Interst Rates varies :</h5>
+                                <br><br>
+                            </div>
+                            <div class="pricing-body">
+                                Mutual fund returns can vary widely based on the assets within the fund and market conditions. 
+                                Over the long term, 
+                                they may aim to provide returns similar to the stock and bond markets.
+                            </div>
+                            <br><br><br>
+                            <a href="https://www.sbimf.com/learn-about-mutual-funds/blog" class="btn btn-outline-dark" role="button" style="border-radius: 15px;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col mb-5 mb-lg-0" data-animate-in="left">
+                </div>
+                <div class="col text-center mb-5" data-animate-in="up">
+                    <div class="pricing-table" id="pricing-table-1">
+                        <div class="pricing-item">
+                            <div class="pricing-head">
+                                <h5>Fixed Deposit</h5>
+                                <h5 class="price">offers fixed interest rates :</h5>
+                                <br><br>
+                            </div>
+                            <div class="pricing-body">
+                               
+                                Fixed deposits are a low-risk savings option that allows you to earn a predetermined interest rate over a fixed period, commonly known as the "term" of the deposit.
+               <br><br> <br>
+                                
+                            </div>
+                            <a href="https://www.pnbhousing.com/blogs/fixed-deposits-blogs/" class="btn btn-outline-dark" role="button" style="border-radius: 15px;">Learn
+                                 more</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col text-center mb-5" data-animate-in="up">
+                    <div class="pricing-table" id="pricing-table-2">
+                        <div class="pricing-item">
+                            <div class="pricing-head">
+                                <h5>Cryptocurrencies</h5>
+                                <br>
+                                <h5 class="price">Interst Rates varies :</h5>
+                                <br><br>
+                            </div>
+                            <div class="pricing-body">
+                                Digital currencies like Bitcoin and Ethereum have gained popularity as alternative investments. However, they are highly speculative and volatile.
+                            </div>
+                            <br><br><br>
+                            <a href="https://www.eisneramper.com/insights/blogs/cryptocurrency-blog/" class="btn btn-outline-dark" role="button" style="border-radius: 15px;">Learn More</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col mb-5 mb-lg-0" data-animate-in="left">
+                </div>
+                <div class="col text-center mb-5" data-animate-in="up">
+                    <div class="pricing-table" id="pricing-table-1">
+                        <div class="pricing-item">
+                            <div class="pricing-head">
+                                <h5>Real Estate</h5>
+                                <h5 class="price">offers fixed interest rates :</h5>
+                                <br><br>
+                            </div>
+                            <div class="pricing-body">
+                               
+                                Real estate investments involve buying physical properties, such as residential or commercial real estate, and potentially generating income through rent or capital appreciation               <br><br> <br>
+                                
+                            </div>
+                            <a href="https://www.confident-group.com/blogs/" class="btn btn-outline-dark" role="button" style="border-radius: 15px;">Learn
+                                 more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-center mb-5" data-animate-in="up">
+                    <div class="pricing-table" id="pricing-table-2">
+                        <div class="pricing-item">
+                            <div class="pricing-head">
+                                <h5>Gold investments</h5>
+                                <br>
+                                <h5 class="price">Interst Rates varies :</h5>
+                                <br><br>
+                            </div>
+                            <div class="pricing-body">
+                                Gold has been considered a store of value for centuries and is often seen as a safe haven asset. 
+                            </div>
+                            <br><br><br>
+                            <a href="https://learnaboutgold.com/blog/" class="btn btn-outline-dark" role="button" style="border-radius: 15px;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col mb-5 mb-lg-0" data-animate-in="left">
+                </div>
+                
+                <div class="col text-center mb-5" data-animate-in="up">
+                    <div class="pricing-table" id="pricing-table-2">
+                        <div class="pricing-item">
+                            <div class="pricing-head">
+                                <h5>Peer-to-Peer Lending</h5>
+                                <br>
+                                <h5 class="price">Interst Rates varies :</h5>
+                                <br><br>
+                            </div>
+                            <div class="pricing-body">
+                                This involves lending money to individuals or small businesses through online platforms. Investors receive interest payments in return for their loans.
+                            </div>
+                            <br><br><br>
+                            <a href="https://www.investopedia.com/articles/financial-theory/08/peer-to-peer-lending.asp" class="btn btn-outline-dark" role="button" style="border-radius: 15px;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="customer-service" style="margin-top: 150px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" data-animate-in="up">
+                    <h1 class="mt-5">Customer Service</h1>
+                    <p class="mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quos facere dolores
+                        nesciunt dolor
+                        at animi consectetur voluptate sint quidem temporibus, maxime qui amet cumque laboriosam,
+                        eaque<br>
+                        distinctio veniam eius!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quos facere
+                        dolores nesciunt dolor
+                        at animi consectetur voluptate sint quidem temporibus, maxime qui amet cumque laboriosam, eaque
+                        distinctio veniam eius!</p>
+                    <a href="#" class="btn btn-ghost" id="btn__customer" role="button">Read Stories &rarr;</a>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </section> -->
+    <section class="contact py-5 my-5" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center" data-animate-in="left">
+                    <img src="Assets/illustration_contact.svg" alt="customer-contact-image" class="img-fluid">
+                </div>
+                <div class="col"  data-animate-in="right">
+                    <form action="#">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control mb-3" id="fullName" aria-describedby="nameHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailId" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailId" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="userMessage" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="userMessage" rows="3"></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-ghost" id="btn-submit" mail to="201B080@juetguna.in">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>&copy; 2024 </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="Animations/animate1.js"></script>
+    <script src="Animations/animate2.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

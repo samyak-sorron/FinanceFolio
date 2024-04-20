@@ -1,0 +1,73 @@
+@media (min-width: 0px) and (max-width: 400px) {
+	#container__home {
+		padding-top: 0vh;
+	}
+	#pricing-table-1 {
+		width: 80vw;
+		height: 560px;
+		overflow-x: hidden;
+	}
+	#img__home {
+		min-width: 50vw;
+		max-width: 50vw;
+		max-height: 400px;
+	}
+	#pricing-table-2 {
+		overflow-x: hidden;
+		width: 80vw;
+		height: 560px;
+	}
+}
+@media (min-width: 100.1px) and (max-width: 200px) {
+	body {
+		overflow-x: hidden;
+	}
+	#img__home {
+		min-width: 80vw;
+		max-width: 80vw;
+	}
+}
+@media (min-width: 356px) and (max-width: 400px) {
+	#img__home {
+		margin-top: 15vh;
+	}
+}
+@media (min-width: 400px) and (max-width: 450px) {
+	#img__home {
+		margin-top: 10vh;
+	}
+}
+@media (min-height: 0px) and (max-width: 400px) {
+	#container__home {
+		padding-top: 10vh;
+	}
+}
+@media (min-width: 0) and (max-width: 160.1px) {
+	#header__features__2 {
+		font-size: 24px;
+	}
+	.navbar-brand {
+		font-size: 15px;
+	}
+	#img__home {
+		max-width: 100px;
+	}
+}
+@media (min-width: 992px) {
+	#pricing-table-1 {
+		transform: translateX(70px);
+		overflow-x: hidden;
+	}
+	#pricing-table-2 {
+		overflow-x: hidden;
+		transform: translateY(70px);
+	}
+	.navbar-floating {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding-top: 20px;
+		padding-bottom: 50px;
+	}
+}
