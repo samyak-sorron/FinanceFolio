@@ -119,35 +119,33 @@
     </div>
     <script>
 
-        async function data(a,b){
-            const url = 'https://real-time-finance-data.p.rapidapi.com/search?query=Apple&language=en';
-            const options = {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': 'f46f26feb6msh6b035d0edabea89p11a1e7jsn7d935d9fe9aa',
-                    'X-RapidAPI-Host': 'real-time-finance-data.p.rapidapi.com'
-                }
-            };
+        // async function data(a,b){
+        //     const url = 'https://real-time-finance-data.p.rapidapi.com/search?query=Apple&language=en';
+        //     const options = {
+        //         method: 'GET',
+        //         headers: {
+        //         }
+        //     };
 
-            try {
-                const response = await fetch(url, options);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }                
-                const data = await response.json();
-                let priceUSD = data['stocks'][0]['price'];
-                let change_percent=data['stocks'][0]['change_percent'];
-                // console.log(data['data'][a][0][b]);
-                // return data['data'][a][0][b];
-                document.getElementById('stockMarketPrice').innerHTML = `Current Price (USD): ${priceUSD}`;
-                document.getElementById('stockPrice').innerHTML = "Current Price (USD): $" + priceUSD;
-            } catch (error) {
-                console.error(error);
-            }
-        }
+        //     try {
+        //         const response = await fetch(url, options);
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }                
+        //         const data = await response.json();
+        //         let priceUSD = data['stocks'][0]['price'];
+        //         let change_percent=data['stocks'][0]['change_percent'];
+        //         // console.log(data['data'][a][0][b]);
+        //         // return data['data'][a][0][b];
+        //         document.getElementById('stockMarketPrice').innerHTML = `Current Price (USD): ${priceUSD}`;
+        //         document.getElementById('stockPrice').innerHTML = "Current Price (USD): $" + priceUSD;
+        //     } catch (error) {
+        //         console.error(error);
+        //     }
+        // }
         
         function calculate() {
-            data();
+            // data();
             var amount = parseFloat(document.getElementById('amount').value);
             var time = parseFloat(document.getElementById('time').value);
             //fd
